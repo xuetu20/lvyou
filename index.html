@@ -78,7 +78,7 @@
     return nunjucks.renderString(template,{name:this.point.name,series:this.series.name,value:this.point.value,people:this.point.people})}
 // 初始化图表
     let map=new Highcharts.Map('map',{chart:{events:{drilldown:function(e){let name=e.point.name;this.setTitle(null,{text:name})},drillup:function(){data=Highcharts.maps['cn/china'];this.setTitle(null,{text:'中国'})}}},
-    title:{text:'鱼の旅游地图',style:{"color":"#333333","fontSize":"24px"}},subtitle:{text:'— — 中国区域',floating:true,y:50,style:{fontSize:'16px'}},
+    title:{text:'鱼の足迹',style:{"color":"#333333","fontSize":"24px"}},subtitle:{text:'— — 慢慢会走完全中国的',floating:true,y:50,style:{fontSize:'16px'}},
     tooltip:{useHTML:true,backgroundColor:'#357fee',borderRadius:5,padding:12,style:{'color':'#dddddd','cursor':'default','fontSize':'14px','pointerEvents':'none','whiteSpace':'nowrap'},formatter:formatter},colorAxis:{min:0,max:50,type:'linear',minColor:'#ffffff',maxColor:'#006cee',stops:[[0,'#ffffff'],[0.02,'#a4d9ee'],[0.04,'#7ebaee'],[0.1,'#357fee'],[0.5,'#0c70ee'],[1,'#006cee']]},
     series:[{data:data,name:'各省景点',joinBy:'name',tooltip:{pointFormat:`{point.name}:{point.value}`}}],
     drilldown:{activeDataLabelStyle:{color:'#FFFFFF',textDecoration:'none',textShadow:'0 0 3px #000000'},drillUpButton:{relativeTo:'spacingBox',position:{x:0,y:60}},series:makeSeries()},mapNavigation:{enabled:true,buttonOptions:{verticalAlign:'bottom'}}});
